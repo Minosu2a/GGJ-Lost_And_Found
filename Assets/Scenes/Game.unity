@@ -588,20 +588,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 2088778928}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91ee94a7149753f4094a3e3978ab6de7, type: 3}
+  m_Script: {fileID: 11500000, guid: 2cd6c1cf75f5ed14188f736f9d7d5192, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _rb: {fileID: 2088778931}
   _groundLayer:
     serializedVersion: 2
     m_Bits: 4294967295
-  _groundThreshold: 0.5
-  _castRadius: 0.5
-  _walkSpeed: 8
-  _sprintSpeed: 25
-  _airControlForce: 10
-  _jumpForce: 10
-  _jumpLimit: 1
+  _groundThreshold: 1.1
+  _castRadius: 0.45
+  _walkSpeed: 250
+  _sprintSpeed: 500
+  _airControlForce: 250
+  _jumpForce: 40
+  _jumpLimit: 2
 --- !u!54 &2088778931
 Rigidbody:
   m_ObjectHideFlags: 0
