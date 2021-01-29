@@ -597,8 +597,8 @@ MonoBehaviour:
     m_Bits: 4294967295
   _groundThreshold: 1.1
   _castRadius: 0.45
-  _walkSpeed: 250
-  _sprintSpeed: 500
+  _walkSpeed: 10
+  _sprintSpeed: 250
   _airControlForce: 250
 --- !u!54 &2088778931
 Rigidbody:
