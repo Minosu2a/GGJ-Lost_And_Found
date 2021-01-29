@@ -14,8 +14,6 @@ public class IdleState : ACharacterState
     public override void EnterState()
     {
         Debug.Log("Enter Idle State");
-        InputManager.Instance.OnJumpPressed += Jump;
-        _controller.JumpCount = 0;
     }
 
     public override void UpdateState()
@@ -28,14 +26,9 @@ public class IdleState : ACharacterState
 
     public override void ExitState()
     {
-        InputManager.Instance.OnJumpPressed -= Jump;
         Debug.Log("Exit Idle State");
     }
 
-    private void Jump()
-    {
-        _controller.ChangeState(ECharacterState.JUMP);
-    }
     #endregion Methods
 
 }

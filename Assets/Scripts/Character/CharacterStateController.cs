@@ -15,11 +15,7 @@ public class CharacterStateController : MonoBehaviour
     [SerializeField] private float _walkSpeed = 250f;
     [SerializeField] private float _sprintSpeed = 500f;
     [SerializeField] private float _airControlForce = 250f;
-    [Header("Jump")]
-    [SerializeField] private float _jumpForce = 40f;
-    [SerializeField] private int _jumpLimit = 2;
 
-    private int _jumpCount = 0;
     private bool _isGrounded = false;
     private RaycastHit _hit;
 
@@ -29,13 +25,6 @@ public class CharacterStateController : MonoBehaviour
 
 
     #region Properties
-    public int JumpLimit => _jumpLimit;
-
-    public int JumpCount
-    {
-        get => _jumpCount;
-        set => _jumpCount = value;
-    }
     public Rigidbody Rb => _rb;
     public ACharacterState CurrentState => _states[_currenStateType];
 
@@ -56,18 +45,6 @@ public class CharacterStateController : MonoBehaviour
         WalkState walkState = new WalkState();
         walkState.Initialize(this, ECharacterState.WALK);
         _states.Add(ECharacterState.WALK, walkState);
-
-        JumpState jumpState = new JumpState();
-        jumpState.Initialize(this, ECharacterState.JUMP);
-        _states.Add(ECharacterState.JUMP, jumpState);
-
-        FallState fallState = new FallState();
-        fallState.Initialize(this, ECharacterState.FALL);
-        _states.Add(ECharacterState.FALL, fallState);
-
-        SprintState sprintState = new SprintState();
-        sprintState.Initialize(this, ECharacterState.SPRINT);
-        _states.Add(ECharacterState.SPRINT, sprintState);
 
         _currenStateType = ECharacterState.IDLE;
     }
@@ -102,28 +79,6 @@ public class CharacterStateController : MonoBehaviour
         _rb.velocity = InputManager.Instance.MoveDir * _walkSpeed;
     }
 
-    public void Sprint()
-    {
-        _rb.velocity = InputManager.Instance.MoveDir * _sprintSpeed;
-    }
-
-
-    public void Jump()
-    {
-        Vector3 tmpVel = _rb.velocity;
-        tmpVel.y = 0;
-        _rb.velocity = tmpVel;
-
-        _rb.AddForce(Vector3.up * _jumpForce, ForceMode.Impulse);
-    }
-
-    public void AirControl()
-    {
-        _rb.AddForce(InputManager.Instance.MoveDir * _airControlForce, ForceMode.Force);
-        Vector3 tmpVel = _rb.velocity;
-        tmpVel.x = Mathf.Clamp(tmpVel.x, -_walkSpeed, _walkSpeed);
-        _rb.velocity = tmpVel;
-    }
 	#endregion Methods
 
 
