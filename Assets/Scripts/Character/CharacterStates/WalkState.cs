@@ -18,8 +18,6 @@ public class WalkState : ACharacterState
         TimerEcho.OnTick += _controller.Echo;
         TimerEcho.StartTimer(_echoDelay);
 
-
-
         Debug.Log("Enter Walk State");
     }
 
@@ -27,7 +25,7 @@ public class WalkState : ACharacterState
     {
         _controller.Walk();
         
-        if (InputManager.Instance.MoveDir == Vector3.zero)
+        if (InputManager.Instance.MoveDir.x == 0f && InputManager.Instance.MoveDir.z == 0f)
         {
             _controller.ChangeState(ECharacterState.IDLE);
         }

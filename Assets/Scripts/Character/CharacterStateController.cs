@@ -136,7 +136,6 @@ public class CharacterStateController : MonoBehaviour
         if (_inRangeOfTrigger == true)
         {
             ChangeState(ECharacterState.INTERACTION);
-            
         }
     }
 
@@ -191,6 +190,7 @@ public class CharacterStateController : MonoBehaviour
     {
         Debug.Log("Echo");
     }
+
 	#endregion Methods
 
 
