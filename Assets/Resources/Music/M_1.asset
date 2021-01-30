@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87744370b371c984b82958ff44ebe188, type: 3}
   m_Name: M_1
   m_EditorClassIdentifier: 
-  _key: 
+  _key: m_mainMenu
   _clip: {fileID: 0}
   _volume: 1
   _pitch: 1

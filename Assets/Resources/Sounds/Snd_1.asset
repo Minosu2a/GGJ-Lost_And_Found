@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87744370b371c984b82958ff44ebe188, type: 3}
   m_Name: Snd_1
   m_EditorClassIdentifier: 
-  _key: ol
+  _key: snd_test
   _clip: {fileID: 8300000, guid: ce5c6edf0186a0346b5a8bef2377ddfe, type: 3}
-  _volume: 1
+  _volume: 0.103
   _pitch: 1
   _loop: 0
