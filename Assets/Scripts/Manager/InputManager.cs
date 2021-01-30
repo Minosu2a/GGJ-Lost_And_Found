@@ -8,11 +8,18 @@ public class InputManager : Singleton<InputManager>
 
     #region Fields
     private Vector3 _moveDir = Vector3.zero;
-
+    private bool _interaction = false;
     #endregion Fields
 
     #region Properties
     public Vector3 MoveDir => _moveDir;
+    public bool Interaction
+    {
+        get
+        {
+            return _interaction;
+        }
+    }
     #endregion Properties
 
     #region Events
@@ -47,6 +54,15 @@ public class InputManager : Singleton<InputManager>
             if (_onInteractionPressed != null)
             {
                 _onInteractionPressed();
+                _interaction = true;
+            }
+        }
+
+        if (Input.GetButtonUp("Fire3"))
+        {
+            if (_onInteractionPressed != null)
+            {
+                _interaction = false;
             }
         }
 
