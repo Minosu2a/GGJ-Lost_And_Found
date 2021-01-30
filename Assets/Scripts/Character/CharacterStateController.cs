@@ -13,8 +13,21 @@ public class CharacterStateController : MonoBehaviour
     [SerializeField] private float _castRadius = 0.45f;
     [Header("Speeds")]
     [SerializeField] private float _walkSpeed = 250f;
-    [SerializeField] private float _sprintSpeed = 500f;
     [SerializeField] private float _airControlForce = 250f;
+
+    [SerializeField] private GameObject _teleportPosition1 = null;
+    [SerializeField] private GameObject _teleportPosition2 = null;
+    [SerializeField] private GameObject _teleportPosition3 = null;
+    private int _levelNumber = 0;
+
+    [SerializeField] private float _delayOfAnimInteraction = 4f;
+    [SerializeField] private float _delayOfTeleport = 2f;
+    private bool _animationInteractionFinished = false;
+    private bool _fadeOutAnimationFinished = false;
+
+
+    private float _timeStamp = 0f;
+
 
     private bool _isGrounded = false;
     private RaycastHit _hit;
@@ -29,6 +42,18 @@ public class CharacterStateController : MonoBehaviour
     public Rigidbody Rb => _rb;
     public ACharacterState CurrentState => _states[_currenStateType];
 
+    public bool AnimationInteractionFinished
+    {
+        get
+        {
+           return _animationInteractionFinished;
+        }
+        set
+        {
+            _animationInteractionFinished = value;
+        }
+        
+    }
     public bool IsGrounded => _isGrounded;
 	#endregion Properties
 
@@ -54,6 +79,7 @@ public class CharacterStateController : MonoBehaviour
         _currenStateType = ECharacterState.IDLE;
 
         InputManager.Instance.OnInteractionKeyPressed += CarillonCheck;
+
     }
     private void Update()
     {
@@ -109,9 +135,41 @@ public class CharacterStateController : MonoBehaviour
     {
         if (_inRangeOfTrigger == true)
         {
-            Debug.Log("Wariooooo");
+            ChangeState(ECharacterState.INTERACTION);
+            
         }
-        Debug.Log("Waluigiiiii");
+    }
+
+    public void Interaction()
+    {
+        _timeStamp += Time.deltaTime;
+
+       if(_timeStamp >= _delayOfAnimInteraction && _animationInteractionFinished == false)
+       {
+            //ANIMATION DU CARILLON QUI SE FAIT MANGER
+            _timeStamp = 0;
+            _animationInteractionFinished = true;
+            Debug.Log("Interaction Animation is finished");
+       }
+
+       if(_animationInteractionFinished == true)
+       {
+            //DEBUT ANIMATION DU TELEPORT (YEUX QUI SE FERME ETC...)
+       }
+
+       if (_timeStamp >= _delayOfTeleport && _fadeOutAnimationFinished == false)
+       {
+            //TELEPORT PENDANT UN ECRAN NOIR 
+            _levelNumber++;
+            _fadeOutAnimationFinished = true;
+       }
+
+       if(_timeStamp >= _delayOfTeleport && _fadeOutAnimationFinished == true) //SUREMENT UN NOUVEAU TIMER A FAIRE
+       {
+            //DEBUT DU NIVEAU
+            ChangeState(ECharacterState.IDLE);
+
+       }
     }
 
     public void Walk()

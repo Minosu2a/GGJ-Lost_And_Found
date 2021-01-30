@@ -18,14 +18,13 @@ public class InteractionState : ACharacterState
 
     public override void UpdateState()
     {
-        if (InputManager.Instance.Interaction == true)
-        {
-            _controller.ChangeState(ECharacterState.INTERACTION);
-        }
+         _controller.Interaction();
+         
     }
 
     public override void ExitState()
     {
+        _controller.AnimationInteractionFinished = false;
         Debug.Log("Exit Interaction State");
     }
 
