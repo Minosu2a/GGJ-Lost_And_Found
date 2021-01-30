@@ -160,6 +160,16 @@ public class CharacterStateController : MonoBehaviour
        if (_timeStamp >= _delayOfTeleport && _fadeOutAnimationFinished == false)
        {
             //TELEPORT PENDANT UN ECRAN NOIR 
+            switch(_levelNumber)
+            {
+                case 1:
+                    this.gameObject.transform.position = _teleportPosition1.transform.position;
+                break;
+                case 2:
+                  //  this.gameObject.transform.position = _teleportPosition1.transform.position;
+                    break;
+
+            }
             _levelNumber++;
             _fadeOutAnimationFinished = true;
        }
