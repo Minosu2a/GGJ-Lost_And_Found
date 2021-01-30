@@ -5,6 +5,7 @@ using UnityEngine;
 public class UIController : MonoBehaviour
 {
     #region Fields
+    [SerializeField] Transform _soundPos = null;
     #endregion Fields
     #region Property
     #endregion Property
@@ -20,6 +21,12 @@ public class UIController : MonoBehaviour
     {
         GameManager.Instance.TogglePause();
     }
+
+    public void SoundTest()
+    {
+        AudioManager.Instance.Play3DSound("ol", _soundPos);
+    }
+
     #endregion Methods
 
 

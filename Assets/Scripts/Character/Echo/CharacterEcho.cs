@@ -14,6 +14,8 @@ public class CharacterEcho : MonoBehaviour
 
 
 
+
+
     private void FixedUpdate()
     {
         

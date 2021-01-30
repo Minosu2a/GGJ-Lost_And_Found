@@ -371,16 +371,16 @@ public class AudioManager : Singleton<AudioManager>
 
     public void Play3DSound(string key, Transform position)
     {
-        if (_soundData.ContainsKey(key) == false)   //Verify if the Soundata is set to loop, if it's not the case use PlaySoundOneShot instead
-        {
-            Debug.LogError("Fnct Play3DSound : Specified key not found for the audio file");
-        }
+       if (_soundData.ContainsKey(key) == false)   //Verify if the Soundata is set to loop, if it's not the case use PlaySoundOneShot instead
+       {
+           Debug.LogError("Fnct Play3DSound : Specified key not found for the audio file");
+       }
         else
         {
             AudioSource instantSource = Instantiate(_3DSoundSource, position);
 
             PlaySound(instantSource, key);
-        }
+         }
     }
     #endregion Common Sounds
 
