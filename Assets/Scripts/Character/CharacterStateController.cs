@@ -21,6 +21,7 @@ public class CharacterStateController : MonoBehaviour
 
     private ECharacterState _currenStateType = ECharacterState.NONE;
     private Dictionary<ECharacterState, ACharacterState> _states = null;
+    private bool _inRangeOfTrigger = false;
     #endregion Fields
 
 
@@ -46,9 +47,13 @@ public class CharacterStateController : MonoBehaviour
         walkState.Initialize(this, ECharacterState.WALK);
         _states.Add(ECharacterState.WALK, walkState);
 
-        
+        InteractionState interactionState = new InteractionState();
+        interactionState.Initialize(this, ECharacterState.INTERACTION);
+        _states.Add(ECharacterState.INTERACTION, interactionState);
 
         _currenStateType = ECharacterState.IDLE;
+
+        InputManager.Instance.OnInteractionKeyPressed += CarillonCheck;
     }
     private void Update()
     {
@@ -82,6 +87,31 @@ public class CharacterStateController : MonoBehaviour
         CurrentState.ExitState();
         _currenStateType = newState;
         CurrentState.EnterState();
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Carillon")
+        {
+           _inRangeOfTrigger = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Carillion")
+        {
+            _inRangeOfTrigger = false;
+        }
+    }
+
+    public void CarillonCheck()
+    {
+        if (_inRangeOfTrigger == true)
+        {
+            Debug.Log("Wariooooo");
+        }
+        Debug.Log("Waluigiiiii");
     }
 
     public void Walk()

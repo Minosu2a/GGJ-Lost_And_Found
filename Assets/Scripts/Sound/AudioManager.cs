@@ -91,16 +91,16 @@ public class AudioManager : Singleton<AudioManager>
     #region Start
     public void Initialize()
     {
-        base.Start();
-
 
         _soundData = new Dictionary<string, SoundData>();
 
-        if (_soundData.Count >= 1)
+        if (_soundDatas.Length >= 1)
         {
             for (int i = 0; i < _soundDatas.Length; i++)
             {
                 _soundData.Add(_soundDatas[i].Key, _soundDatas[i]);
+                Debug.Log(_soundDatas[i].Key);
+                
             }
 
             _repetitiveSources = new Dictionary<string, AudioSource>();
@@ -349,7 +349,7 @@ public class AudioManager : Singleton<AudioManager>
 
         if(_soundData[key].Loop == false)   //Verify if the Soundata is set to loop, if it's not the case use PlaySoundOneShot instead
         {
-            Debug.LogError("Fnct PlaySound : The Soundata is not set as loop");
+            Debug.LogWarning("Fnct PlaySound : The Soundata is not set as loop");
         }
         else
         {
@@ -373,13 +373,14 @@ public class AudioManager : Singleton<AudioManager>
     {
        if (_soundData.ContainsKey(key) == false)   //Verify if the Soundata is set to loop, if it's not the case use PlaySoundOneShot instead
        {
+            Debug.Log(key);
            Debug.LogError("Fnct Play3DSound : Specified key not found for the audio file");
        }
         else
         {
             AudioSource instantSource = Instantiate(_3DSoundSource, position);
 
-            PlaySound(instantSource, key);
+            PlaySoundOneShot(instantSource, key);
          }
     }
     #endregion Common Sounds
@@ -436,23 +437,7 @@ public class AudioManager : Singleton<AudioManager>
 
     #endregion Repetitive Sounds
 
-    #region OneShot Sounds
-
-    public void PlaySound(string key)
-    {
-
-        if (_soundData.ContainsKey(key) == false)
-        {
-            Debug.LogError("Fnct Play Sound : Specified key not found for the audio file");
-        }
-        else
-        {
-            PlaySoundOneShot(_mainSoundSource, key);
-        }
-
-    }
-
-    #endregion OneShot Sounds
+    
 
     #endregion Methods
 }

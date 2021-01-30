@@ -4,9 +4,8 @@ public enum ECharacterState
 
     IDLE,
     WALK,
-    JUMP,
     FALL,
-    SPRINT,
+    INTERACTION,
     NONE
 
 };

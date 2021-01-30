@@ -24,7 +24,7 @@ public class UIController : MonoBehaviour
 
     public void SoundTest()
     {
-        AudioManager.Instance.Play3DSound("ol", _soundPos);
+        AudioManager.Instance.Play3DSound("snd_test", _soundPos);
     }
 
     #endregion Methods
