@@ -56,9 +56,17 @@ public class CharacterStateController : MonoBehaviour
         {
             transform.forward = Vector3.right;
         }
-        else if (_rb.velocity.x < 0 )
+        else if (_rb.velocity.x < 0)
         {
             transform.forward = Vector3.left;
+        }
+        if(_rb.velocity.z > 0)
+        {
+            transform.forward = Vector3.forward;
+        }
+        else if (_rb.velocity.z < 0)
+        {
+            transform.forward = Vector3.back;
         }
     }
     public void FixedUpdate()
