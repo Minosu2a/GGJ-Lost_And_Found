@@ -18,7 +18,7 @@ public class IdleState : ACharacterState
 
     public override void UpdateState()
     {
-        if(InputManager.Instance.MoveDir != Vector3.zero)
+        if(InputManager.Instance.MoveDir.x != 0f || InputManager.Instance.MoveDir.z != 0f)
         {
             _controller.ChangeState(ECharacterState.WALK);
         }

@@ -6,10 +6,11 @@ public class CharacterEcho : MonoBehaviour
 {
 
     private float _circleRadius = 360f;
+    private float _circleSize = 10f;
     private int _numberOfRaycast = 30;
     private LayerMask _obstacleLayerMask;
 
-
+    private Timer _tickDelay;
 
 
 
@@ -18,7 +19,8 @@ public class CharacterEcho : MonoBehaviour
 
     private void FixedUpdate()
     {
-        
+
+
     }
 
 }
