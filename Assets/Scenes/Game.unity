@@ -842,7 +842,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 567411474}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 435, y: 197.11, z: 719.25}
+  m_LocalPosition: {x: 446, y: 219.37, z: 704.9}
   m_LocalScale: {x: 1, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 1362384289}
@@ -1619,8 +1619,12 @@ MonoBehaviour:
   _groundThreshold: 1.1
   _castRadius: 0.45
   _walkSpeed: 100
-  _sprintSpeed: 250
   _airControlForce: 250
+  _teleportPosition1: {fileID: 0}
+  _teleportPosition2: {fileID: 0}
+  _teleportPosition3: {fileID: 0}
+  _delayOfAnimInteraction: 4
+  _delayOfTeleport: 2
 --- !u!54 &2088778931
 Rigidbody:
   m_ObjectHideFlags: 0
