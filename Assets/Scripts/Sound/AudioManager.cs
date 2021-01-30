@@ -98,9 +98,7 @@ public class AudioManager : Singleton<AudioManager>
         {
             for (int i = 0; i < _soundDatas.Length; i++)
             {
-                _soundData.Add(_soundDatas[i].Key, _soundDatas[i]);
-                Debug.Log(_soundDatas[i].Key);
-                
+                _soundData.Add(_soundDatas[i].Key, _soundDatas[i]);                
             }
 
             _repetitiveSources = new Dictionary<string, AudioSource>();
