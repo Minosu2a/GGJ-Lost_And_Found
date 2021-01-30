@@ -9,6 +9,7 @@ public class InputManager : Singleton<InputManager>
     #region Fields
     private Vector3 _moveDir = Vector3.zero;
     private bool _interaction = false;
+    private float _gravityForce = -0.5f;
     #endregion Fields
 
     #region Properties
@@ -68,6 +69,7 @@ public class InputManager : Singleton<InputManager>
 
         _moveDir.x = Input.GetAxis("Horizontal");
         _moveDir.z = Input.GetAxis("Vertical");
+        _moveDir.y = _gravityForce;
     }
 
     #endregion Methods
