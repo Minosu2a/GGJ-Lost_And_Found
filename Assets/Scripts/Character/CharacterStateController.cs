@@ -46,6 +46,8 @@ public class CharacterStateController : MonoBehaviour
         walkState.Initialize(this, ECharacterState.WALK);
         _states.Add(ECharacterState.WALK, walkState);
 
+        
+
         _currenStateType = ECharacterState.IDLE;
     }
     private void Update()
@@ -79,6 +81,10 @@ public class CharacterStateController : MonoBehaviour
         _rb.velocity = InputManager.Instance.MoveDir * _walkSpeed;
     }
 
+    public void Echo()
+    {
+        Debug.Log("Echo");
+    }
 	#endregion Methods
 
 
