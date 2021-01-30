@@ -150,7 +150,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28386fc2a05b32144a09373047d2c395, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sprintEnabled: 0
 --- !u!4 &148312629
 Transform:
   m_ObjectHideFlags: 0
@@ -288,6 +287,7 @@ MonoBehaviour:
   _transitionSource: {fileID: 1890973878}
   _repetitiveSource: {fileID: 7820365783914371624, guid: 42ebadbf2e627854489f92a0adcff783,
     type: 3}
+  _3DSoundSource: {fileID: 0}
   _soundsVolume: 1
   _musicsVolume: 1
   _fadeTick: 0.05

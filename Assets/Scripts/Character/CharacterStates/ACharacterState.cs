@@ -22,8 +22,6 @@ public abstract class ACharacterState : MonoBehaviour
 		_controller = controller;
 		_state = state;
 		_timerEcho = new Timer();
-
-
 	}
 
 	public abstract void EnterState();

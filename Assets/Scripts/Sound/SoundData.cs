@@ -18,6 +18,8 @@ public class SoundData : ScriptableObject
 
     [SerializeField] private bool _loop = false;
 
+    [SerializeField] private Transform _position = null;
+
 
     public string Key => _key;
 
