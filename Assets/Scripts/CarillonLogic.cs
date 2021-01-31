@@ -24,12 +24,13 @@ public class CarillonLogic : MonoBehaviour
         }
     }
 
-   /* private void Update()
+    private void Update()
     {
         Vector3 _dir = (_target.position - transform.position).normalized;
         RaycastHit hit;
         Physics.Raycast(transform.position, _dir, out hit, Mathf.Infinity, layerMask, queryTriggerInteraction);
         Debug.DrawRay(transform.position, _dir * hit.distance, Color.red);
-    }*/
+        Debug.Log(hit.transform);
+    }
 
 }

@@ -24,7 +24,7 @@ public class MainMenuController : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Mouse0))
         {
-          //  Debug.Log("Echo");
+            Debug.Log("Echo");
          //   GameObject Echoclone = Instantiate(_echo, , Quaternion.identity);
             //Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
