@@ -17,7 +17,7 @@ public class MainMenuController : MonoBehaviour
     #region Methods
     private void Start()
     {
-     //   AudioManager.Instance.PlayMusic("")
+        AudioManager.Instance.PlayMusic("m_MainMenu");
     }
 
     public void Update()
@@ -39,6 +39,10 @@ public class MainMenuController : MonoBehaviour
 
     public void Play()
     {
+        AudioManager.Instance.StopMusic();
+        AudioManager.Instance.PlayMusicWithFadeIn("M_Appaisant", 2f);
+
+
         GameStateManager.Instance.LaunchTransition(EGameState.GAME);
     }
 

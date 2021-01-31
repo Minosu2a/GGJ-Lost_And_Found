@@ -184,6 +184,8 @@ public class CharacterStateController : MonoBehaviour
                     //ChangeState(ECharacterState.IDLE);
                     break;
                 case 1:
+                    AudioManager.Instance.SwitchMusicTransition("M_Inquietant", 4f, 1f);
+
                     _shadow1.gameObject.SetActive(false);
                     _shadow2.gameObject.SetActive(true);
                     _carillon1.gameObject.SetActive(false);

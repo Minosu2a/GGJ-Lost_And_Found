@@ -284,7 +284,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: aa880a9856b9e644f834663910085795, type: 2}
   - {fileID: 11400000, guid: 5386188ae9ec96c4b99723a34ab03d58, type: 2}
   - {fileID: 11400000, guid: 0447097e073fd1147a9618afa04fe62d, type: 2}
-  - {fileID: 11400000, guid: 0447097e073fd1147a9618afa04fe62d, type: 2}
+  - {fileID: 11400000, guid: 44d7907e39b368e4387c9974155da0ad, type: 2}
   _mainSoundSource: {fileID: 1429136039}
   _musicSource: {fileID: 1642142540}
   _transitionSource: {fileID: 1890973878}
