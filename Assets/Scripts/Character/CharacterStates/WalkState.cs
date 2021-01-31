@@ -5,7 +5,7 @@ using UnityEngine;
 public class WalkState : ACharacterState
 {
     #region Fields
-    private float _echoDelay = 0.7f;
+    private float _echoDelay = 0.5f;
 
     #endregion Fields
 

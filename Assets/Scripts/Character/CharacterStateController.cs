@@ -15,10 +15,13 @@ public class CharacterStateController : MonoBehaviour
     [SerializeField] private float _walkSpeed = 250f;
     [SerializeField] private float _airControlForce = 250f;
 
+    [SerializeField] private GameObject _teleportPosition0 = null;
     [SerializeField] private GameObject _teleportPosition1 = null;
     [SerializeField] private GameObject _teleportPosition2 = null;
     [SerializeField] private GameObject _teleportPosition3 = null;
     private int _levelNumber = 0;
+
+    [SerializeField] private GameObject _echo = null;
 
     [SerializeField] private float _delayOfAnimInteraction = 4f;
     [SerializeField] private float _delayOfTeleport = 2f;
@@ -164,6 +167,9 @@ public class CharacterStateController : MonoBehaviour
             //TELEPORT PENDANT UN ECRAN NOIR 
             switch (_levelNumber)
             {
+                case 0:
+                   // this.gameObject.transform.position = _teleportPosition1.transform.position;
+                    break;
                 case 1:
                     this.gameObject.transform.position = _teleportPosition1.transform.position;
                 break;
@@ -197,6 +203,9 @@ public class CharacterStateController : MonoBehaviour
     public void Echo()
     {
         Debug.Log("Echo");
+        Vector3 position = new Vector3(this.transform.position.x, this.transform.position.y + 0.5f, this.transform.position.z);
+       GameObject Echoclone = Instantiate(_echo, position, Quaternion.identity);
+        CurrentState.TimerEcho.StartTimer(0.7f);
     }
 
     #endregion Methods
