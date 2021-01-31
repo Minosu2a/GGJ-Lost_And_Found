@@ -1,13 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIManager : Singleton<UIManager>
 {
 
     #region Fields
     private UIController _uiController = null;
-
+    private bool _fadeIn = false;
+    private bool _fadeOut = false;
     #endregion Fields
 
 
@@ -27,6 +29,30 @@ public class UIManager : Singleton<UIManager>
             }
         }
 
+    }
+
+    public bool FadeInGo
+    {
+        get
+        {
+            return _fadeIn;
+        }
+        set
+        {
+            _fadeIn = value;
+        }
+    }
+
+    public bool FadeOutGo
+    {
+        get
+        {
+            return _fadeOut;
+        }
+        set
+        {
+            _fadeOut = value;
+        }
     }
     #endregion Property
 

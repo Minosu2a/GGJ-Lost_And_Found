@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InteractionState : ACharacterState
 {
@@ -14,6 +15,7 @@ public class InteractionState : ACharacterState
     public override void EnterState()
     {
         Debug.Log("Enter Interaction State");
+        
     }
 
     public override void UpdateState()

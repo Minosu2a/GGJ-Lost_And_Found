@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CharacterStateController : MonoBehaviour
 {
@@ -24,6 +25,7 @@ public class CharacterStateController : MonoBehaviour
     [SerializeField] private float _delayOfTeleport = 2f;
     private bool _animationInteractionFinished = false;
     private bool _fadeOutAnimationFinished = false;
+    private bool temp_ = false;
 
 
     private float _timeStamp = 0f;
@@ -154,12 +156,15 @@ public class CharacterStateController : MonoBehaviour
        if(_animationInteractionFinished == true)
        {
             //DEBUT ANIMATION DU TELEPORT (YEUX QUI SE FERME ETC...)
+            UIManager.Instance.FadeInGo = _animationInteractionFinished;
+            Debug.Log("FadeIn");
+            _animationInteractionFinished = false;
        }
 
        if (_timeStamp >= _delayOfTeleport && _fadeOutAnimationFinished == false)
        {
             //TELEPORT PENDANT UN ECRAN NOIR 
-            switch(_levelNumber)
+            switch (_levelNumber)
             {
                 case 1:
                     this.gameObject.transform.position = _teleportPosition1.transform.position;
@@ -171,7 +176,8 @@ public class CharacterStateController : MonoBehaviour
             }
             _levelNumber++;
             _fadeOutAnimationFinished = true;
-       }
+            UIManager.Instance.FadeOutGo = _fadeOutAnimationFinished;
+        }
 
        if(_timeStamp >= _delayOfTeleport && _fadeOutAnimationFinished == true) //SUREMENT UN NOUVEAU TIMER A FAIRE
        {
@@ -191,8 +197,8 @@ public class CharacterStateController : MonoBehaviour
         Debug.Log("Echo");
     }
 
-	#endregion Methods
+    #endregion Methods
 
 
-  
+
 }
