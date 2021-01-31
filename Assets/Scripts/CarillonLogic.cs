@@ -8,6 +8,8 @@ public class CarillonLogic : MonoBehaviour
     private float maxDistance = 100;
     private int layerMask = 0 << 8;
     QueryTriggerInteraction queryTriggerInteraction = QueryTriggerInteraction.Ignore;
+    [SerializeField] private GameObject _carillon1 = null;
+    [SerializeField] private GameObject _carillon2 = null;
     private void Start()
     {
 

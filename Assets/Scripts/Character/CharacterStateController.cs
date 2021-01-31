@@ -19,7 +19,10 @@ public class CharacterStateController : MonoBehaviour
     [SerializeField] private GameObject _teleportPosition1 = null;
     [SerializeField] private GameObject _teleportPosition2 = null;
     [SerializeField] private GameObject _teleportPosition3 = null;
-    private int _levelNumber = 0;
+
+    [SerializeField] private GameObject _teleportCarillon1 = null;
+    [SerializeField] private GameObject _teleportCarillon2 = null;
+    private int _levelNumber = 1;
 
     [SerializeField] private GameObject _echo = null;
 
@@ -28,6 +31,10 @@ public class CharacterStateController : MonoBehaviour
 
     [SerializeField] private float _delayOfAnimInteraction = 4f;
     [SerializeField] private float _delayOfTeleport = 2f;
+    [SerializeField] private GameObject _shadow1 = null;
+    [SerializeField] private GameObject _shadow2 = null;
+    [SerializeField] private GameObject _carillon2 = null;
+    [SerializeField] private GameObject _carillon1 = null;
     private bool _animationInteractionFinished = false;
     private bool _fadeOutAnimationFinished = false;
     private bool temp_ = false;
@@ -177,6 +184,11 @@ public class CharacterStateController : MonoBehaviour
                     //ChangeState(ECharacterState.IDLE);
                     break;
                 case 1:
+                    _shadow1.gameObject.SetActive(false);
+                    _shadow2.gameObject.SetActive(true);
+                    _carillon1.gameObject.SetActive(false);
+                    _carillon2.gameObject.SetActive(true);
+                    _carillon2.gameObject.transform.position = _teleportCarillon1.transform.position;
                     this.gameObject.transform.position = _teleportPosition1.transform.position;
                 break;
                 case 2:
