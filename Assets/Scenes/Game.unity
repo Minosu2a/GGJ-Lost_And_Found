@@ -626,6 +626,7 @@ Transform:
   m_Children:
   - {fileID: 1592597401}
   - {fileID: 1048189900}
+  - {fileID: 333927626}
   m_Father: {fileID: 1935450954}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1938,6 +1939,36 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 322266318}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &333927625
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 333927626}
+  m_Layer: 0
+  m_Name: SpawnCarillonLVL1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &333927626
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 333927625}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.192, y: 1.434, z: -0.1764}
+  m_LocalScale: {x: 0.01, y: 2, z: 0.01}
+  m_Children: []
+  m_Father: {fileID: 55362867}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &335510891
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3051,6 +3082,12 @@ PrefabInstance:
 --- !u!4 &611879078 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8304094340018228137, guid: 86174dda949d87f4d9916887685c76ed,
+    type: 3}
+  m_PrefabInstance: {fileID: 611879077}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &611879079 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8304094340018228150, guid: 86174dda949d87f4d9916887685c76ed,
     type: 3}
   m_PrefabInstance: {fileID: 611879077}
   m_PrefabAsset: {fileID: 0}
@@ -4363,6 +4400,12 @@ PrefabInstance:
 --- !u!4 &915419348 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4796644250420725959, guid: 388c63d5ba433f844bc04bd6419f8d52,
+    type: 3}
+  m_PrefabInstance: {fileID: 915419347}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &915419349 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5321788168587907709, guid: 388c63d5ba433f844bc04bd6419f8d52,
     type: 3}
   m_PrefabInstance: {fileID: 915419347}
   m_PrefabAsset: {fileID: 0}
@@ -7170,8 +7213,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: Carillon
       objectReference: {fileID: 0}
+    - target: {fileID: 8734221628584839225, guid: 29431d94eaafa99478c590f808568d22,
+        type: 3}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 526118483}
+    - target: {fileID: 8734221628584839225, guid: 29431d94eaafa99478c590f808568d22,
+        type: 3}
+      propertyPath: _carillon1
+      value: 
+      objectReference: {fileID: 915419349}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 29431d94eaafa99478c590f808568d22, type: 3}
+--- !u!1 &1696309536 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2914358803747031341, guid: 29431d94eaafa99478c590f808568d22,
+    type: 3}
+  m_PrefabInstance: {fileID: 1696309535}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1696309537 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3552852348838006540, guid: 29431d94eaafa99478c590f808568d22,
+    type: 3}
+  m_PrefabInstance: {fileID: 1696309535}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1711210417
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8512,16 +8577,16 @@ MonoBehaviour:
   _teleportPosition1: {fileID: 1592597400}
   _teleportPosition2: {fileID: 567411474}
   _teleportPosition3: {fileID: 720335582}
-  _teleportCarillon1: {fileID: 0}
-  _teleportCarillon2: {fileID: 0}
+  _teleportCarillon1: {fileID: 333927625}
+  _teleportCarillon2: {fileID: 1696309537}
   _echo: {fileID: 1567788384527539106, guid: c1a6bb874c1d1d444b302e737bc279b3, type: 3}
   _light: {fileID: 1447579339}
   _delayOfAnimInteraction: 4
   _delayOfTeleport: 2
-  _shadow1: {fileID: 0}
-  _shadow2: {fileID: 0}
-  _carillon2: {fileID: 0}
-  _carillon1: {fileID: 0}
+  _shadow1: {fileID: 915419349}
+  _shadow2: {fileID: 611879079}
+  _carillon2: {fileID: 1696309537}
+  _carillon1: {fileID: 1696309536}
 --- !u!54 &2088778931
 Rigidbody:
   m_ObjectHideFlags: 0
