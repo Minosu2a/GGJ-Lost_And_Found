@@ -202,10 +202,10 @@ public class CharacterStateController : MonoBehaviour
 
     public void Echo()
     {
-        Debug.Log("Echo");
-        Vector3 position = new Vector3(this.transform.position.x, this.transform.position.y + 0.5f, this.transform.position.z);
+       Debug.Log("Echo");
+       Vector3 position = new Vector3(this.transform.position.x, this.transform.position.y + 0.5f, this.transform.position.z);
        GameObject Echoclone = Instantiate(_echo, position, Quaternion.identity);
-        CurrentState.TimerEcho.StartTimer(0.7f);
+       CurrentState.TimerEcho.StartTimer(0.7f);
     }
 
     #endregion Methods

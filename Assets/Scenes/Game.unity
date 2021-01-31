@@ -2111,11 +2111,13 @@ MonoBehaviour:
     m_Bits: 4294967295
   _groundThreshold: 1.1
   _castRadius: 0.45
-  _walkSpeed: 100
+  _walkSpeed: 10
   _airControlForce: 250
-  _teleportPosition1: {fileID: 0}
-  _teleportPosition2: {fileID: 0}
-  _teleportPosition3: {fileID: 0}
+  _teleportPosition0: {fileID: 1877529993}
+  _teleportPosition1: {fileID: 1592597400}
+  _teleportPosition2: {fileID: 567411474}
+  _teleportPosition3: {fileID: 720335582}
+  _echo: {fileID: 1567788384527539106, guid: c1a6bb874c1d1d444b302e737bc279b3, type: 3}
   _delayOfAnimInteraction: 4
   _delayOfTeleport: 2
 --- !u!54 &2088778931
