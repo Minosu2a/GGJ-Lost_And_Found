@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class CharacterStateController : MonoBehaviour
 {
-
     #region Fields
     [SerializeField] private Rigidbody _rb = null;
     [Header("Physic")]
@@ -54,7 +53,6 @@ public class CharacterStateController : MonoBehaviour
         {
             _animationInteractionFinished = value;
         }
-        
     }
     public bool IsGrounded => _isGrounded;
 	#endregion Properties
@@ -156,7 +154,7 @@ public class CharacterStateController : MonoBehaviour
        if(_animationInteractionFinished == true)
        {
             //DEBUT ANIMATION DU TELEPORT (YEUX QUI SE FERME ETC...)
-            UIManager.Instance.FadeInGo = _animationInteractionFinished;
+           // UIManager.Instance.FadeInGo = true;
             Debug.Log("FadeIn");
             _animationInteractionFinished = false;
        }
@@ -175,14 +173,18 @@ public class CharacterStateController : MonoBehaviour
 
             }
             _levelNumber++;
+            _timeStamp = 0;
             _fadeOutAnimationFinished = true;
-            UIManager.Instance.FadeOutGo = _fadeOutAnimationFinished;
+            UIManager.Instance.FadeInGo = true;
         }
 
        if(_timeStamp >= _delayOfTeleport && _fadeOutAnimationFinished == true) //SUREMENT UN NOUVEAU TIMER A FAIRE
        {
             //DEBUT DU NIVEAU
             ChangeState(ECharacterState.IDLE);
+            UIManager.Instance.FadeOutGo = true;
+            _fadeOutAnimationFinished = false;
+            _timeStamp = 0;
 
        }
     }
