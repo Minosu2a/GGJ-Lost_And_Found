@@ -20,24 +20,24 @@ public class UIAppear : MonoBehaviour
         if (UIManager.Instance.FadeInGo == true)
         {
             FadeIn();
-            UIManager.Instance.FadeInGo = false;
             Debug.Log("FadeIN");
         }
 
         if (UIManager.Instance.FadeOutGo == true)
         {
             FadeOut();
-            UIManager.Instance.FadeOutGo = false;
             Debug.Log("FadeOUT");
         }
     }
     public void FadeIn()
     {
         EyesImage.CrossFadeAlpha(1, 2, false);
+        UIManager.Instance.FadeInGo = false;
     }
 
     public void FadeOut()
     {
         EyesImage.CrossFadeAlpha(0, 2, false);
+        UIManager.Instance.FadeOutGo = false;
     }
 }
