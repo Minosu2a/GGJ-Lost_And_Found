@@ -8512,10 +8512,16 @@ MonoBehaviour:
   _teleportPosition1: {fileID: 1592597400}
   _teleportPosition2: {fileID: 567411474}
   _teleportPosition3: {fileID: 720335582}
+  _teleportCarillon1: {fileID: 0}
+  _teleportCarillon2: {fileID: 0}
   _echo: {fileID: 1567788384527539106, guid: c1a6bb874c1d1d444b302e737bc279b3, type: 3}
   _light: {fileID: 1447579339}
   _delayOfAnimInteraction: 4
   _delayOfTeleport: 2
+  _shadow1: {fileID: 0}
+  _shadow2: {fileID: 0}
+  _carillon2: {fileID: 0}
+  _carillon1: {fileID: 0}
 --- !u!54 &2088778931
 Rigidbody:
   m_ObjectHideFlags: 0
