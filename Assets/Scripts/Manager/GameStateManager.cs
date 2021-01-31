@@ -57,7 +57,7 @@ public class GameStateManager : Singleton<GameStateManager>
 
     public void ChangeState(EGameState newState)
     {
-        Debug.Log("Transition from " + _currenStateType + " to : " + newState);
+       // Debug.Log("Transition from " + _currenStateType + " to : " + newState);
 
         CurrentState.ExitState();
         _previousState = _currenStateType;
