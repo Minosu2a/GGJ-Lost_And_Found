@@ -10325,6 +10325,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.106
       objectReference: {fileID: 0}
+    - target: {fileID: 3552852348838006540, guid: 29431d94eaafa99478c590f808568d22,
+        type: 3}
+      propertyPath: m_TagString
+      value: Carillon
+      objectReference: {fileID: 0}
     - target: {fileID: 4828861293888152773, guid: 29431d94eaafa99478c590f808568d22,
         type: 3}
       propertyPath: m_Name
@@ -12315,7 +12320,7 @@ MonoBehaviour:
   _teleportPosition2: {fileID: 567411474}
   _teleportPosition3: {fileID: 720335582}
   _teleportCarillon1: {fileID: 333927625}
-  _teleportCarillon2: {fileID: 1696309537}
+  _teleportCarillon2: {fileID: 0}
   _echo: {fileID: 1567788384527539106, guid: c1a6bb874c1d1d444b302e737bc279b3, type: 3}
   _light: {fileID: 1447579339}
   _delayOfAnimInteraction: 4

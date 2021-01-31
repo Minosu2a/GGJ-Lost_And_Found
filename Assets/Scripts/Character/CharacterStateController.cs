@@ -195,7 +195,8 @@ public class CharacterStateController : MonoBehaviour
                     AudioManager.Instance.Play3DSound("snd_carillon", _carillon1.gameObject.transform);
                 break;
                 case 2:
-                    AudioManager.Instance.Play3DSound("snd_carillon", _carillon1.gameObject.transform);
+                    AudioManager.Instance.Play3DSound("snd_carillon", _carillon2.gameObject.transform);
+                    GameStateManager.Instance.ChangeState(EGameState.MAINMENU);
                     break;
 
             }
