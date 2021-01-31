@@ -132,7 +132,8 @@ public class CharacterStateController : MonoBehaviour
     {
         if (other.tag == "Carillon")
         {
-           _inRangeOfTrigger = true;
+            ChangeState(ECharacterState.INTERACTION);
+            _inRangeOfTrigger = true;
         }
     }
 
@@ -148,7 +149,6 @@ public class CharacterStateController : MonoBehaviour
     {
         if (_inRangeOfTrigger == true)
         {
-            ChangeState(ECharacterState.INTERACTION);
         }
     }
 
@@ -192,9 +192,10 @@ public class CharacterStateController : MonoBehaviour
                     _carillon2.gameObject.SetActive(true);
                     _carillon2.gameObject.transform.position = _teleportCarillon1.transform.position;
                     this.gameObject.transform.position = _teleportPosition1.transform.position;
+                    AudioManager.Instance.Play3DSound("snd_carillon", _carillon1.gameObject.transform);
                 break;
                 case 2:
-                    this.gameObject.transform.position = _teleportPosition2.transform.position;
+                    AudioManager.Instance.Play3DSound("snd_carillon", _carillon1.gameObject.transform);
                     break;
 
             }

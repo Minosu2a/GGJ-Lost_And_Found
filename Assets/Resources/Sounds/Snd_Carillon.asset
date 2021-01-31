@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 87744370b371c984b82958ff44ebe188, type: 3}
-  m_Name: Snd_1
+  m_Name: Snd_Carillon
   m_EditorClassIdentifier: 
-  _key: snd_test
-  _clip: {fileID: 8300000, guid: ce5c6edf0186a0346b5a8bef2377ddfe, type: 3}
-  _volume: 0.103
+  _key: snd_carillon
+  _clip: {fileID: 8300000, guid: 7ead5be4c479c8b479b0677e929f3d72, type: 3}
+  _volume: 0.1
   _pitch: 1
   _loop: 0
