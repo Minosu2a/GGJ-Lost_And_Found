@@ -23,6 +23,9 @@ public class CharacterStateController : MonoBehaviour
 
     [SerializeField] private GameObject _echo = null;
 
+    [SerializeField] private Light _light = null;
+
+
     [SerializeField] private float _delayOfAnimInteraction = 4f;
     [SerializeField] private float _delayOfTeleport = 2f;
     private bool _animationInteractionFinished = false;
@@ -168,13 +171,16 @@ public class CharacterStateController : MonoBehaviour
             switch (_levelNumber)
             {
                 case 0:
-                   // this.gameObject.transform.position = _teleportPosition1.transform.position;
+                    this.gameObject.transform.position = _teleportPosition0.transform.position;
+                    _light.intensity = 0.15f;
+                   // InputManager.Instance.MoveDir = Vector3.zero;
+                    //ChangeState(ECharacterState.IDLE);
                     break;
                 case 1:
                     this.gameObject.transform.position = _teleportPosition1.transform.position;
                 break;
                 case 2:
-                  //  this.gameObject.transform.position = _teleportPosition1.transform.position;
+                    this.gameObject.transform.position = _teleportPosition2.transform.position;
                     break;
 
             }

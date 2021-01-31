@@ -13,7 +13,18 @@ public class InputManager : Singleton<InputManager>
     #endregion Fields
 
     #region Properties
-    public Vector3 MoveDir => _moveDir;
+    public Vector3 MoveDir
+    {
+        get
+        {
+            return _moveDir;
+        }
+        set
+        {
+            _moveDir = value;
+        }
+    }
+
     public bool Interaction
     {
         get
