@@ -16,4 +16,4 @@ MonoBehaviour:
   _clip: {fileID: 8300000, guid: c47c16ffd3d9c5c4b99b70ad340ddd70, type: 3}
   _volume: 1
   _pitch: 1
-  _loop: 0
+  _loop: 1

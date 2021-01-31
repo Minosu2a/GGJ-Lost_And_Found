@@ -15,6 +15,11 @@ public class MainMenuController : MonoBehaviour
     #endregion Properties
 
     #region Methods
+    private void Start()
+    {
+     //   AudioManager.Instance.PlayMusic("")
+    }
+
     public void Update()
     {
         if(Input.GetKeyDown(KeyCode.Mouse0))
